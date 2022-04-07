@@ -25,7 +25,9 @@ c = conn.cursor()
 # Add terms you want to scrape here
 terms = ['children+military', 'reintegration', 'military+families', 'divorce+military',
          'spouses+military', 'military+deployments', 'active+duty', 'military+ptsd', 'military+youth', 'military+reintegration', 'service+members+ptsd',
-         'military+veterans', 'war+and+terrorism', 'military']
+         'military+veterans', '\"war+and+terrorism\"', 'military', 'armed+forces', 'military+spouses', 'military+divorce',
+         'military+parenting', 'service+members', 'soldiers', 'airmen', 'marines', 'sailor', 'coast+guardsmen', 'national+guardsmen',
+         'reservists', 'veterans', 'posttraumatic+stress+disorder', 'reserve+component', 'war', 'terrorism']
 
 
 # Function to create the database table. Only required to run on first iteration.
@@ -61,7 +63,7 @@ def scrape():
             print('Finished scraping page ' + str(page) + ' of term: ' + term)
 
 
-# create_db()
-scrape()
+create_db()
+# scrape()
 conn.commit()
 conn.close()
